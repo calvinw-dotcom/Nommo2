@@ -1,0 +1,42 @@
+{% extends 'tts/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<body>
+    <br>
+    <br>
+
+    <div class="text-center">
+
+        <h3> Read with speed </h3>
+
+        <br>
+
+        <h5> Listen to articles </h5>
+
+        <hr>
+
+        <br>
+
+
+        {% if user.is_authenticated %}
+            <a class="btn btn-primary" type="buttin" href="{% url 'dashboard' %}"> Dashboard</a>        
+            
+        {% else %}
+        
+            <a class="btn btn-primary" type="buttin" href="{% url 'my-login' %}"> Log in </a>
+               
+        {% endif %}
+
+<!-- Added the if statement as it was the home page was previously offering users that had already signed in the oppourtunity to create an account-->
+
+    </div>
+
+
+</body>
+
+
+
+{% endblock %}

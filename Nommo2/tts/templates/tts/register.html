@@ -1,0 +1,39 @@
+{% extends 'tts/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <body>
+        
+        <div class="container bg-light shadow-md p-5 form-layout">
+            <h3> create your account</h3>
+            <h5> </h5>
+
+            <hr>  
+            <br>
+
+            <form method="POST" autocomplete="off">
+                {% csrf_token %} <!-- Madatory to prevent CSRF attacks-->
+
+                {{form.as_p}} <!-- ".as_p" adds a bit of style and makes look nicer-->
+
+                <br>
+
+                <button type="submit" class="btn btn-primary w-100 btn-block p-2"> Create account</button>
+
+            </form>
+
+            <br>
+
+            <div class="text-centre">
+
+                <p> Already have an account?</p> <a href="{% url 'my-login'%}"> Login</a>
+
+            </div>
+            
+        </div>
+        <br>
+    </body>
+
+{% endblock %}

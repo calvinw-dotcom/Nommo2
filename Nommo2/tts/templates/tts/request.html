@@ -1,0 +1,54 @@
+{% extends 'tts/base.html' %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<body>
+    <div class="container bg-light shadow md p-5 form-layout">
+        <h3> Article narrator</h3>
+        <h5> Convert an article to an MP3 file</h5>
+        
+        <br>
+        <br>
+        
+        <form method="POST" autocomplete="off">
+            {% csrf_token %} <!-- Madatory to prevent CSRF attacks-->
+
+            {{form|crispy}} <!-- ".as_p" adds a bit of style and makes look nicer-->
+            
+            <br>
+
+            <button type="submit" class="btn btn-primary w-100 btn-block p-2">Convert</button>
+
+        </form>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

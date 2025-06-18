@@ -1,7 +1,7 @@
 
 # Nommo2
 
-**Nommo2** is a Django-based web application that provides a Text-to-Speech (TTS) service. Users can input text, and the system generates MP3 audio files from the text using backend logic. It features user authentication, a dashboard, and request tracking.
+**Nommo2** is a Django-based web application that provides a Text-to-Speech (TTS) service. Users can input URLs, and the system generates MP3 audio files from the text using backend logic. It features user authentication, a dashboard, and request tracking. To save on API calls, requested URLs are compared to those previously requested. If the URL has not been previously requested, we scrape the data and pass to the TTS API. However, if the URL has been requested previously, we simply return the file stored on the last call.
 
 ## Features
 
@@ -10,7 +10,6 @@
 - Automatic generation of MP3 files
 - Dashboard with request history
 - Admin interface for managing requests
-- Static frontend with basic styling
 
 ## Project Structure
 
